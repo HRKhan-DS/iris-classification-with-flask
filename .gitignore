@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+#Not to upload extra csv file
+iris_original.csv/
+iris_cleaned.csv/
+
 # C extensions
 *.so
 
@@ -127,6 +131,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+iris/
 
 # Spyder project settings
 .spyderproject

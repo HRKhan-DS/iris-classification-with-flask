@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Add custom CSS styles for the predicted iris flower */
+        .predicted-flower {
+            font-size: 24px; /* Adjust the font size as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1>Iris Classification Result</h1>
+    <div>
+        <h2>Predicted Iris Flower:</h2>
+        <p class="predicted-flower">{{ prediction }}</p>
+        {% if prediction == 'setosa' %}
+            <img src="{{ url_for('static', filename='setosa.jpeg') }}" alt="Setosa Image" width="350">
+        {% elif prediction == 'versicolor' %}
+            <img src="{{ url_for('static', filename='versicolor.jpeg') }}" alt="Versicolor Image" width="350">
+        {% elif prediction == 'virginica' %}
+            <img src="{{ url_for('static', filename='virginica.jpg') }}" alt="Virginica Image" width="350">
+        {% else %}
+            <p>No image available</p>
+        {% endif %}
+    </div>
+    <a href="/goback">Go Back</a>
+</body>
+</html>

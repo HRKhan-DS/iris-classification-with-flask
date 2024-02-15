@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Classification App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Iris Classification App!</h1>
+    <img src="{{ url_for('static', filename='images.jpeg') }}" alt="Flower Image" width="350">
+    <br><br>
+    <form action="/predict" method="post">
+        <label for="sepal_length">Sepal length:</label>
+        <input type="text" name="sepal_length" id="sepal_length" value="">
+        <br><br>
+        <label for="sepal_width">Sepal width:</label>
+        <input type="text" name="sepal_width" id="sepal_width" value="">
+        <br><br>
+        <label for="petal_length">Petal length:</label>
+        <input type="text" name="petal_length" id="petal_length" value="">
+        <br><br>
+        <label for="petal_width">Petal width:</label>
+        <input type="text" name="petal_width" id="petal_width" value="">
+        <br><br>
+        <label for="soil_type">Soil type:</label>
+        <select name="soil_type" id="soil_type">
+            <option value="sandy">Sandy</option>
+            <option value="clay">Clay</option>
+            <option value="loamy">Loamy</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
